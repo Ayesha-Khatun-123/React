@@ -17,9 +17,21 @@ function App() {
     
    // counter=counter+1
    //setCounter(counter)
-   if(counter<20)
-    setCounter(counter+1)
+
+   //if(counter<20)
+   // setCounter(counter+1)// jokhon akhan a dekh66a same kaj ho66a tokhon bunch kora result pathai
+   // setCounter(counter+1) //sob gulo ekbar e dekha final result 1 debe
+   // setCounter(counter+1)
+   // setCounter(counter+1)
     //console.log("value Added",counter)
+
+  // This won’t give you 4 — it will just give 1. Because counter is the same (old) value in all the calls — React batches them and uses the same snapshot value.
+    setCounter(counter => counter+1) // akhane prev value function ni66a value ni66a add kor6a but akhane intter funnction
+    setCounter(counter => counter+1) //er kaj dekhiya bunch value ta di66a 4
+    setCounter(counter => counter+1)
+    setCounter(counter => counter+1)
+ 
+    //This will give you 4, because each update gets the latest value from the previous update.
   }
 
 
@@ -37,7 +49,7 @@ function App() {
 
     <button onClick={addValue}> Add Value{counter}</button>
     <br/>
-  
+   
     <button onClick={removeValue}> Decrese Value{counter} </button>
     </>
   )
